@@ -1,0 +1,314 @@
+%% 
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+
+\documentclass[preprint,3pt]{elsarticle} %元々12pt
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{multirow}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+\usepackage{lineno,hyperref}
+\linenumbers
+
+\journal{Nuclear Physics Research Section A}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Development of simple proton CT system with novel MCS correction methods}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+
+\author[waseda]{M.~Takabe}
+\ead{universal-miho@ruri.waseda.jp}
+\author[waseda,TWMU]{T.~Masuda}
+\author[waseda]{M.~Arimoto}
+\author[waseda]{J.~Kataoka}
+\author[waseda]{K.~Sueoka}
+\author[waseda]{A.~Koide}
+\author[waseda]{T.~Maruhashi}
+\author[Tokyo]{S.~Tanaka}
+\author[TWMU]{T.~Nishio}
+\author[NPTT]{T.~Toshito}
+\author[NPTT]{M.~Kimura}
+\author[QST]{T.~Inaniwa}
+
+\address[waseda]{Waseda University, Graduate School of Advanced Science and Engineering, 3-4-1 Okubo, Shinjuku, Tokyo, Japan}
+\address[Tokyo]{The University of Tokyo, 2-11-16 Yayoi, Bunkyo-ku, Tokyo, Japan}
+\address[TWMU]{Tokyo Women’s Medical University, 8-1, Kawadacho, Shinjuku-ku, Tokyo, Japan}
+\address[NPTT]{Nagoya Proton Therapy Center, 1-1-1, Hirate-cho, Kita-ku, Nagoya, Japan}
+\address[QST]{National Institute of Radiological Sciences, 4-9-1 Anagawa, Inage-ku, Chiba-shi, Chiba, Japan}
+
+\begin{abstract}
+%% Text of abstract
+	For safe and effective proton therapy, the proton range in a patient's body, characterized by the water equivalent length (WEL), must be accurately determined. Current treatment planning is based on X-ray computed tomography images, which might cause uncertainty and/or be inaccurate because of the different energy loss processes between protons and X-rays. We develop a novel but simple, real-time proton CT system comprising CCD camera and an X-ray intensifying screen, which is enough thin for protons to penetrate. Since protons lose energy when they pass through a phantom, different light output corresponding to the proton energy loss is acquired in the screen. Images of the screen are taken by the CCD camera. Experiments were performed by using this technique with 70-MeV and 200-MeV proton beams. In both of the cases, blurring of images caused by proton scattering was significant, so we decided to develop two effective correction methods. One is for the passive scattering systems and the other is for the scanning systems. We successfully obtain clear images with little scattering effect by applying these correction methods. Moreover, we confirm that the WEL values estimated from the acquired CT images are in good agreement with true values for Polymethyl methacrylate (PMMA) and isopropyl alcohol within1-$\sigma$ uncertainty. Nuclear reaction limits accuracy. \\
+%Proton therapy is an advanced cancer therapy that features energy loss of protons, known as the Bragg peak. Owing to high concentration of the radiation dose, the proton range in a patient's body, characterized by the water equivalent length (WEL), must be accurately determined for safe and effective proton therapy. Current treatment planning is based on X-ray computed tomography (CT) images, which might cause uncertainty and/or be inaccurate because of the different energy loss processes between protons and X-rays. A more accurate estimate of the WEL values is obtained if the proton itself is used for CT imaging. We develop a novel but simple, real-time proton CT system comprising an X-ray scintillator sheet and EM-CCD camera. Since protons lose energy when passing through a subject like a patient’s body or phantoms, different light output corresponding to proton energy loss, is anticipated within a screen sheet, which can be imaged by the EM-CCD camera. Experiments were performed using this technique with 70-MeV and 200-MeV proton beams. Further, we examined two different beam types, broad and narrow beams, which mimic the passive scattering and spot scanning systems generally used in clinical treatment. In all cases, blurring of images caused by Multiple Coulomb Scattering (MCS) was significant, prompting us to develop various correction methods. One such technique involves changing the distance between the phantom and screen to estimate the proton CT image at the phantom in situ for the broad beam. Deviation from an incident beam profile is corrected as being due to MCS for the narrow beam. We successfully obtain clear images with little MCS effect by applying these correction methods. Moreover, we confirm that the WEL values estimated from the acquired CT images are in good agreement with true values for Polymethyl methacrylate (PMMA), isopropyl alcohol, and Vaseline within 1σ uncertainty. 
+\end{abstract}
+
+\begin{keyword}
+proton computed tomography (pCT) \sep proton therapy \sep water equivalent length (WEL) \sep range measurement \sep Multiple coulomb scattering (MCS) \sep CCD camera
+%% keywords here, in the form: keyword \sep keyword
+%% PACS codes here, in the form: \PACS code \sep code
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\end{keyword}
+\end{frontmatter}
+
+\linenumbers
+
+%% main text
+\section{Introduction}
+	Proton therapy has attracted attention because a proton deposits most of its energy just before it stops, and it is possible to concentrate the amount of proton dose on a tumor. However, if protons are irradiated outside the target tumor, normal tissues are damaged and insufficient dose for treatment is delivered to the tumor. For effective treatment planning, an accurate measurement of the proton stopping power ratio relative to water (RSP), which is an energy deposit per unit length (dE/dx), in a body is necessary.\\
+\begin{wrapfigure}{r}{6cm}%10zw} 
+\vspace*{-\intextsep} % これはおまじないのようなものですので書いておいてください。 
+%\includegraphics[width=10zw]{画像.jpg} 
+\includegraphics[width=6cm]{image/scattering.eps}
+\caption[The schematic image of proton scattering.]{The schematic image of proton scattering.}
+\label{scatter}
+\end{wrapfigure} 
+Currently, the typical treatment planing for proton therapy is based on X-ray computed tomography (xCT) images whose pixel values are determined by atomic number and density of a phantom. Schneider et al proposed a stoichiometric calibration, which determines xCT values-to-RSP calibration curve in a body with minimum uncertainty by using non-human tissue phantom and human body tissue data from ICRU {\cite{schneider}}. Yang et al analyzed factors affecting uncertainty of SPR estimation in proton treatment planning and found that there is an uncertainty of 3.4 $\%$ at maximum {\cite{Yang}. Therefore, it is necessary to obtain proton CT (pCT) images for more accurate proton therapy.\\
+	Protons are scattered by atomic nuclei and sometimes produce low energy protons in a body. The former process is called multiple coulomb scattering (MCS) and the latter process is called nuclear reaction. 200-MeV proton is spread by MCS, which corresponds to full width at half maximum (FWHM) of 1.2 cm when it goes through 20cm in a water block, as shown in Figure \ref{scatter}. This effect makes pCT images blurry. Hence, MCS effect needs to be corrected for obtaining clear images.\\
+	Currently, a well-known system of pCT is based on silicon strip detectors {\cite{SSD}}. Since the detectors track the individual protons, MCS effect can be corrected easily. However, the complexity and high cost are important issues. The pCT based on the silicon strip detectors has not been clinically used yet.\\
+	Tanaka et al proposed a simple pCT system with a CCD camera and a thick scintillator, which is enough for protons to stop {\cite{mrtanaka}}. Since protons and the generated light scatter in the scintillator, the WEL values of obtained images are not correct.\\
+	In this paper, we report a newly developed simple pCT system with the novel correction methods of proton scattering. Experiments were performed with 70-MeV and 200-MeV protons with two beam types, i.e., broad and narrow beams, which mimicking the passive scattering and scanning systems, which are used in current treatments. One correction method for the broad beam type is performed by changing the distance between the phantom and screen. We obtain the relationship between the distances and the CCD values, and estimate the proton CT image when the distance is 0cm. The other method uses the narrow beam. Deviation between injection beam and penetrated one is corrected by gathering scattered protons and setting them in an ideal position.\\
+Our aim is to obtain a high spatial resolution ($\sim$ 1mm) and the WEL values within 1 $\%$ uncertainty, which are suggested in this paper {\cite{POLUDNIOWSKI}}.
+
+\section{Materials and methods}
+\begin{wrapfigure}{r}{6cm}%10zw} 
+\vspace*{-\intextsep} % これはおまじないのようなものですので書いておいてください。 
+\includegraphics[width=6cm]{image/SPR.eps}
+\caption{Proton stopping power in water }
+\label{SPR}
+\end{wrapfigure} 
+	The purpose of pCT is to obtain SPR in a body. Figure \ref{SPR} shows proton stopping power in water. It increases when proton energy decreases. Since SPR differ from proton energy and we can't obtain it directly as CT values, we measure water equivalent length (WEL) along proton path which is same to the energy integral of proton stopping power. We use a CCD camera (BITRAN, BU66-EM) and a Gd$_{2}$O$_{2}$S:Tb X-ray intensifying screen (FUJI Film HR-16, 16 $\times$ 21 cm$^2$ ) whose thickness is 0.75 mm for 200-MeV protons and 0.25mm for 70-MeV protons. The experimental setup is illustrated in Figure \ref{setup} {\cite{mrtanaka}}. \\
+\begin{wrapfigure}{r}{6cm} 
+\vspace*{-\intextsep} 
+\includegraphics[width=6cm]{image/setup.eps}
+\caption{Diagram of experimental setup. The proton beam types mimic the passive scattering and spot scanning systems. }
+\label{setup}
+\end{wrapfigure}
+After passing through a phantom, the decelerated proton deposits its energy depending on the penetrating proton's energy at the intensifying screen. The difference between the incident energy and penetrated one is measured based on the amount of light at the intensifying screen. A mirror is necessary for preventing radiation damage to the camera.\\
+	Before taking CT images, the relationship between the WEL value, which proton penetrated, and the amount of light at the intensifying screen should be measured. We used polyethylene (PE) blocks as the phantoms whose accurate WEL values are known and measure the amount of light after specific proton penetrated, as shown in Figure \ref{table}.\\
+%光量レンジ変換テーブルの画像入れるか
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{image/table.eps}
+\caption[The method to make Light-WEL conversion table.]{The method to make Light-WEL conversion table.}
+\label{table}
+\end{figure}
+
+\subsection{pCT imaging}
+	A 100 $\times$ 100 mm$^{2}$ irradiation field was formed using the wobbler radiation method and a collimator with 70-MeV protons at the National Institute of Radiological Sciences (NIRS) to mimic a passive scattering system. A 140 $\times$ 140 mm$^{2}$ irradiation field was formed by a double-scatterer system and a collimator with 200-MeV protons at Nagoya Proton Therapy Center. In this paper, the distance between the phantom and the screen is named ''PS distance''. The measurement condition is shown in table \ref{condition}. The irradiation times were limited due to a wobbler cycle of cyclotron or a banch cycle of synchrotron.\\
+\begin{table}[H]
+\centering
+\begin{tabular}{p{5cm}ccc} 
+\hline
+ & \multicolumn{2}{c}{70 MeV} & 200 MeV\\ 
+ & broad beam & narrow beam & broad beam\\
+\hline
+Current & 3 nA & 500 pA & 10 nA \\
+Number of scan / 360 degree & 360 & - & 120 \\
+Irradiation time / scan & 0.245 s & 32 (0.20 s $\times$ 160 shots) & 0.5 s\\
+\hline
+\end{tabular}
+\caption{Measurement condition of CT}
+\label{condition}
+\end{table}
+
+\begin{wrapfigure}{r}{6cm}%10zw} 
+\vspace*{-\intextsep} % これはおまじないのようなものですので書いておいてください。 
+\includegraphics[width=6cm]{image/SRimages.eps}
+\caption{Diagram of phantom (left), reconstructed image with 70-MeV protons (center) and 200 MeV proton (right). }
+\label{SRimage}
+\end{wrapfigure}
+	Figure \ref{SRimage} is the result of pCT. The center image was taken with 70-MeV protons and the right one was taken with 200-MeV protons. In both of the images, the PS distances were set to 20 mm. We succeeded in obtaining images whose contents could be distinguished. The image with 200-MeV protons is much clearer than that with 70-MeV protons because high energy protons which interact substances less than low energy protons have a better straightness. However the energy loss in a phantom is small and detected values at CCD camera are open to noise effects. \\
+	The 70-MeV proton image blurred and the WEL values of the contents is far from the real value due to proton scatterings. In the case of 200-MeV protons, we tried  to measure spatial resolution with the phantom which has holes from $\phi$1mm to $\phi$10mm. Figure \ref{200MeV} shows the diagram of phantom, reconstructed image and one-dimensional profile of a 2mm hole line. Although the contrast of the reconstructed image was reversed, 2mm holes were separated clearly.\\
+	To reduce the impact of scattering and obtain accurate WEL values, we developed two correction methods.\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{image/200MeVimage.eps}
+\caption[Diagram of phantom (left), reconstructed image (center) and one-dimensional profile of 2mm holes with 200-MeV protons. ]{Diagram of phantom (left), reconstructed image (center) and one-dimensional profile of 2mm holes with 200-MeV protons.}
+\label{200MeV}
+\end{figure}
+
+\subsection{Correction method}
+	Since pCT images with 70-MeV protons are influenced proton scattering effect more than that with 200-MeV protons, we developed correction method for 70-MeV proton CT images as a first attempt.\\
+\subsubsection{Using broad beam}
+\begin{wrapfigure}{r}{6cm}%10zw} 
+\vspace*{-\intextsep} % これはおまじないのようなものですので書いておいてください。 
+     \includegraphics[width=6cm]{image/distance.eps}
+    \caption{Method of scattering correction using broad beams. The solid line represents the best-fitting exponential function and the star mark is the virtually estimated ADU value for the PS distance of 0cm.}
+\label{distance}
+\end{wrapfigure}
+	The protons which penetrated phantoms have an angular distribution. The larger the PS distance becomes, the stronger the influence of MCS effects. To reduce this influence, we obtained several images with different PS distances and calculated the relationship between the distance and the analog-to-digital unit (ADU) for each pixel, as shown in Figure \ref{distance}. We then fit the data points with a simple exponential function (i.e., Y = A $\times$ $\rm B^{X}$) to extrapolate the virtual ADU for the PS distance of 0cm.
+
+\subsubsection{Using narrow beam}
+	We used a 70-MeV collimated proton beam with a 3-mm width, which was formed by putting two 50mm-thick PE blocks together, as shown in Figure \ref{collimated}. The phantom was moved vertically with the collimated beam to obtain scanning data. Since incident protons were scattered by the phantom, protons were detected by multiple pixels of the CCD camera, instead of being detected by one pixel in an ideal situation. Thus, in a shot, we integrated a one-dimensional profile of the detecting pixels at the screen, and set the integrated value to the mean position of a Gaussian distribution, and repeat this correction to all shots. Figure \ref{integral} shows how to integrate a profile.\\
+	In this experiment, we used bisymmetric phantoms so that a scan of each angle would be the same.
+The shot cycle of CCD camera limits the scanning time as 32 second. To reduce data acquisition time, we replicated one scan to all angles, but it doesn't affect the evaluation of the correction method.\\
+\begin{figure}[H]
+\begin{minipage}{0.35\hsize}
+\centering
+\includegraphics[width=3.5cm]{image/CollimatedSetup.eps}
+\caption{The experimental setup to collimate 70-MeV proton beam.}
+\label{collimated}
+\end{minipage}
+\begin{minipage}{0.65\hsize}
+\centering
+\includegraphics[width=6.5cm]{image/integral.eps}
+\caption{Illustration for the proton scattering correction method using narrow beam. }
+\label{integral}
+\end{minipage}
+\end{figure}
+
+\section{Results}
+\subsection{Using broad beam}
+	The 70-MeV proton CT images with different PS distances are shown in Figure \ref{comparePSdis}. A white ring around the phantom is still exist in the corrected image, which are caused by proton scattering and low energy protons produced by nuclear reactions. But after the blurring correction, the corrected CT image was greatly improved in terms of their contrast. Table \ref{WELtable} shows obtained WEL values compared with simulated WEL values. Simulated WEL values and corrected experimental WEL values of PMMA and Isopropyl alcohol have a good agreement within error margin. The simulated WEL value of Vaseline may not collect because we used general density in the simulation, instead of measuring real one. \\
+\begin{figure}[H]
+\centering
+\includegraphics[width=11cm]{image/compare_images.eps}
+\caption{(From left to right) The images obtained with PS distances of 50 mm, 20 mm, estimated with that of 0 mm, and the diagram of the phantom.  
+\label{comparePSdis}}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{3cm}cccc} 
+\hline
+SUBSTANCE & SIMULATION & \multicolumn{3}{c}{EXPERIMENT} \\ 
+ & & \multicolumn{2}{c}{broad beam} & narrow beam\\ 
+ & & row & corrected & corrected\\
+\hline
+PMMA & 1.16 & 0.92$\pm$0.09 &   1.15$\pm$0.04 & 1.16$\pm$0.07 \\%& 0.25$\pm$0.95\\ 
+Isopropyl alcohol & 0.82 & 0.94$\pm$0.06 &  0.81$\pm$0.03 & 0.83$\pm$0.01 \\%& 1.38$\pm$2.10\\
+Vaseline & 0.98 & 0.93$\pm$0.05  &  0.94$\pm$0.02 & -- \\%& 1.24$\pm$1.85\\
+\hline
+\end{tabular}
+\caption{WEL value comparison, normalized by water.}
+\label{WELtable}
+\end{table}
+
+\subsection{Using narrow beam}
+\begin{wrapfigure}{r}{6cm}%10zw} 
+\vspace*{-\intextsep} % これはおまじないのようなものですので書いておいてください。 
+\includegraphics[width=6cm]{image/correction_by_pencil.eps}
+\caption{CT images acquired using broad (left) and narrow (right) beams.}
+\label{CorrectNB}
+\end{wrapfigure}
+	A comparison of two CT images is shown in Figure \ref{CorrectNB} in which the left one was acquired by using a broad beam and the right one was acquired by using a narrow beam with the correction method, respectively. A white ring around the phantom, seen in the image obtained with the broad beam (Figure \ref{CorrectNB} left), was completely removed in the one acquired with the narrow beam (Figure  \ref{CorrectNB} right). In addition, we obtained accurate WEL values, as shown in table \ref{WELtable}.\\
+	
+\section{Discussion}
+\subsection{Using broad beam}
+	If PS distance becomes larger, the effect of MCS becomes	larger, as I mentioned before. On the other hand, the effect of low energy protons by nuclear reactions becomes lesser because these protons stop in an air. In this experiment, the energy of secondary particles made by nuclear reactions was low because injection protons were low energy, too. In the case of 200-MeV protons, nuclear reactions effect larger than that of 70-MeV protons, so we can obtain the trend of MCS by setting PS distance longer and the trend of nuclear reactions by setting PS distance nearer. To combine those two trend, the accuracy of correction will be better.\\
+	In this method, we tried to extrapolate the virtual ADU for the PS distance of 0cm. It means that some points of the phantom are not very close to the screen due to phantom shape. To bend the screen along the phantom will be able to lead more clear image.\\
+	We can take images whose PS distances are different at one time, so irradiated dose doesn't mean to become larger if we operate this method. However, since this method obtains the trend of scattering in each pixel, it is open to noise. \\
+\subsection{Using narrow beam}
+	Light-WEL conversion table made by this method takes not only the effect of MCS but also nuclear reactions into consideration. The process of nuclear reactions depends on the nuclei of a phantom and the amount of them. In this experiment, PE blocks was used to make Light-WEL conversion table, and isopropyl alcohol, water and PMMA is used as phantoms.  The main nucleus in the all nuclear reactions which occur in these phantoms except water is carbon. In water, oxygen is the main nucleus. Since the densities of these phantoms were near and the processes of nuclear reactions were almost the same, the trend of the energy of secondary particles resembled. Therefore, we could correct well. In human body, main nuclei are carbon and oxygen so that when we take pCT of human body, we will be able to obtain more accurate WEL values by making Light-WEL conversion table with phantoms which contains carbon and oxygen.\\
+	There are one problem. The spatial resolution depends on the width of collimated beam. In therapy facilities, the beam width of spot scanning is over 1 cm FWHM at 200-MeV protons {\cite{nagoya}}. One solution is to collimate the beam by high density metals, but many low energy protons will be produced. Another solution is to obtain data with 1 cm width proton beam, and solve simultaneous equations to determine each pixel value.\\
+	
+\section{Conclusion and Next}
+In summary, we successfully obtained CT images with protons by using a simple setup that consisted of a CCD camera and an intensifying screen. To solve the issue of image blurring due to MCS and nuclear reaction, we developed methods for correcting the scattering with both broad and narrow beams. Based on the good agreement between the measured and simulated WEL values, we concluded that our developed methods work properly.\\
+　In the next step, we will use more complex phantoms and evaluate the spatial resolution with 200-MeV proton. 
+
+\label{}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle{elsarticle-num} 
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+\begin{thebibliography}{00}
+
+%% \bibitem{label}
+%% Text of bibliographic item
+
+\bibitem{schneider} U Schneider, et al.: The calibration of CT Hounsfield units for radiotherapy treatment planning, Phys. Med. Biol. 41, 111-24, 1996.
+\bibitem{Yang} M Tang, et al.; Comprehensive analysis of proton range uncertainties related to patient stopping-power-ratio estimation using the stoichiometric calibration, Phys. Med. Biol. 57, 4095-4115, 2012.
+\bibitem{SSD} Vladimir A. Bashkirov, et al: Development of proton computed tomography detectors for applications in hadron therapy, Nucl. Instrum. Methods Phys, 809 (2016) 120.
+\bibitem{mrtanaka} S Tanaka, et al.: Development of proton CT imaging system using plastic scintillator and CCD camera, Phys. Med. Biol. 61, 4156-4167, 2016. 
+\bibitem{POLUDNIOWSKI} G Poludniowski et al.; Proton radiography and tomography with application to proton therapy, Br J Radiol 88, 2015.
+\bibitem{phits} https://phits.jaea.go.jp/indexj.html
+\bibitem{nagoya} T Toshito,et al.; A proton therapy system in Nagoya Proton Therapy Center, Australas Phys Eng Sci Med, 39:645-654, 2016
+\end{thebibliography}
+
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
